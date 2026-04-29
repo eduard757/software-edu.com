@@ -1,53 +1,125 @@
-/* DISEÑO FUTURISTA TOTAL - FORZADO */
+/* CONFIGURACIÓN BASE */
 body {
-    margin: 0 !important;
-    padding: 0 !important;
-    /* Primero un color sólido por si la imagen no carga, luego la imagen */
-    background-color: #0b0e14 !important; 
-    background-image: url('Pro-Drive_PCaaS.jpg') !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    background-attachment: fixed !important;
-    background-size: cover !important;
-    font-family: 'Arial', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    background: url('pngtree-futuristic-classroom-youth-learning-interactive-technology-picture-image_16294112.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    scroll-behavior: smooth;
 }
 
-/* MENÚ TIPO GLOBO / BURBUJA (Líneas 11-17 de tu HTML) */
+/* MENÚ DE GLOBOS FLOTANTES */
 .barra-navegacion {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 20px !important;
-    padding: 40px !important;
-    background: transparent !important;
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    z-index: 1000;
 }
 
 .barra-navegacion a {
-    /* Esto crea el efecto de "Globo de Cristal" */
-    background: rgba(255, 255, 255, 0.1) !important;
-    backdrop-filter: blur(15px) !important;
-    -webkit-backdrop-filter: blur(15px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
-    padding: 15px 30px !important;
-    border-radius: 100px !important; /* GLOBO TOTAL */
-    color: white !important;
-    text-decoration: none !important;
-    font-weight: bold !important;
-    transition: 0.3s !important;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) !important;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 20px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .barra-navegacion a:hover {
-    background: rgba(0, 198, 255, 0.5) !important;
-    transform: scale(1.1) !important;
-    box-shadow: 0 0 25px #00c6ff !important;
+    background: #00c6ff;
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.6);
+    color: #000;
 }
 
-/* SECCIONES EN CRISTAL */
-.seccion-fase {
-    background: rgba(0, 0, 0, 0.7) !important;
-    border: 2px solid #00c6ff !important;
-    border-radius: 30px !important;
-    padding: 40px !important;
-    margin: 20px auto !important;
-    max-width: 900px !important;
+/* CONTENEDOR DE VENTANAS */
+.contenedor-principal {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+/* ESTILO DE VENTANA DE CRISTAL */
+.ventana-cristal {
+    background: rgba(15, 20, 30, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 198, 255, 0.4);
+    border-radius: 15px;
+    width: 85%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    animation: aparecer 0.8s ease-out;
+}
+
+.header-ventana {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.punto {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.rojo { background: #ff5f56; }
+.amarillo { background: #ffbd2e; }
+.verde { background: #27c93f; }
+
+h2 {
+    color: #00c6ff;
+    font-size: 1.8rem;
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, #00c6ff, transparent);
+    margin-bottom: 20px;
+}
+
+p, li {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+.grid-tipos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #00c6ff;
+}
+
+/* ANIMACIÓN */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVO PARA MÓVIL */
+@media (max-width: 600px) {
+    .barra-navegacion { flex-wrap: wrap; padding: 10px; }
+    .grid-tipos { grid-template-columns: 1fr; }
+    h2 { font-size: 1.4rem; }
 }
