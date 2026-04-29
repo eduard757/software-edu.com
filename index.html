@@ -6,54 +6,52 @@
     <title>Software Educativo | Charlles Salcedo</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="fondo-tecnologico">
 
-    <nav class="navbar">
+    <nav class="barra-navegacion">
         <a href="#fase-video" onclick="mostrarSeccion('fase-video')">¿Qué es?</a>
         <a href="#fase-tipos" onclick="mostrarSeccion('fase-tipos')">Tipos</a>
         <a href="#fase-ventajas" onclick="mostrarSeccion('fase-ventajas')">Ventajas</a>
         <a href="#fase-evaluacion" onclick="mostrarSeccion('fase-evaluacion')">Evaluación</a>
-        <a href="#fase-musica" onclick="mostrarSeccion('fase-musica')">Relajación</a>
+        <a href="#fase-musica" onclick="mostrarSeccion('fase-musica')">Música</a>
     </nav>
 
     <header id="bienvenida">
-        <div class="robot-box">
-            <img src="assets/images/robot.png" alt="Robot" class="robot" id="robot-img">
+        <div class="caja-robot">
+            <img src="assets/images/robot.png" alt="Robot" class="robot-movil" id="robot-img">
             <div class="burbuja" id="mensaje">
-                ¡Hola! Bienvenido. Mira el video educativo y dime tu nombre para comenzar.
+                ¡Hola! Haz clic aquí para que me presente.
             </div>
         </div>
         <div class="interaccion">
             <input type="text" id="nombreUsuario" placeholder="Tu nombre aquí...">
-            <button onclick="comenzar()">Ingresar</button>
+            <button onclick="comenzar()">Iniciar Presentación</button>
         </div>
     </header>
 
-    <main id="contenido-dinamico">
+    <main id="contenido-principal">
         <section id="fase-video" class="seccion-fase">
             <h2>¿Qué es el Software Educativo?</h2>
-            <div class="video-contenedor">
+            <div class="contenedor-video">
                 <iframe src="https://www.youtube.com/embed/S28Z_9pL6tY" frameborder="0" allowfullscreen></iframe>
             </div>
         </section>
 
         <section id="fase-tipos" class="seccion-fase" style="display:none;">
             <h2>Tipos de Software Educativo</h2>
-            <div class="galeria">
-                <p>Existen tutoriales, simuladores, juegos educativos y más.</p>
-                <img src="assets/images/tipos1.jpg" alt="Tipos" style="width:80%; border-radius:10px;">
-            </div>
+            <p>Tutoriales, simuladores, juegos educativos y más.</p>
+            <img src="assets/images/tipos1.jpg" alt="Tipos" class="img-presentacion">
         </section>
 
         <section id="fase-ventajas" class="seccion-fase" style="display:none;">
             <h2>Ventajas de su uso</h2>
-            <p>Fomentan el autoaprendizaje y la interactividad dinámica.</p>
-            <img src="assets/images/ventajas.jpg" alt="Ventajas" style="width:80%; border-radius:10px;">
+            <p>Fomentan el autoaprendizaje y la interactividad.</p>
+            <img src="assets/images/ventajas.jpg" alt="Ventajas" class="img-presentacion">
         </section>
 
         <section id="fase-evaluacion" class="seccion-fase" style="display:none;">
             <h2>Evaluación y Uso Práctico</h2>
-            <p>Análisis de resultados y aplicaciones en el aula de clases.</p>
+            <p>Análisis de resultados en el aula de clases.</p>
         </section>
 
         <section id="fase-musica" class="seccion-fase" style="display:none;">
