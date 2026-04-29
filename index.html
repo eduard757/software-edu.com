@@ -12,7 +12,7 @@
         <div class="robot-box">
             <img src="assets/images/robot.png" alt="Robot" class="robot" id="robot-img">
             <div class="burbuja" id="mensaje">
-                ¡Hola! Bienvenido a la página de <strong>Charlles Salcedo</strong>. Mira el video de abajo y luego dime tu nombre.
+                ¡Hola! Bienvenido a la página de <strong>Charlles Salcedo</strong>. Mira el video de abajo y dime tu nombre.
             </div>
         </div>
 
@@ -26,32 +26,33 @@
         <section id="fase-video" class="seccion-fase">
             <h2>¿Qué es el Software Educativo?</h2>
             <div class="media-container">
-                <video id="video-intro" width="100%" controls>
-                    <source src="assets/video/explicacion.mp4" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
+                <iframe width="100%" height="315" 
+                    src="https://www.youtube.com/embed/vB_F9mZidpM" 
+                    frameborder="0" allowfullscreen>
+                </iframe>
             </div>
         </section>
 
         <section id="fase-tipos" class="seccion-fase" style="display:none;">
             <h2>Tipos de Software Educativo</h2>
             <div class="galeria">
-                <p>Explora los diferentes tipos de herramientas educativas.</p>
+                <p>Aquí puedes ver los diferentes tipos de sistemas educativos.</p>
+                <img src="assets/images/tipos.jpg" alt="Tipos de software" style="width:80%">
             </div>
         </section>
 
         <section id="fase-ventajas" class="seccion-fase" style="display:none;">
             <h2>Ventajas de usar Software Educativo</h2>
-            <p>Mira los beneficios de aprender con tecnología.</p>
+            <p>Descubre por qué es mejor estudiar con tecnología.</p>
         </section>
 
         <section id="fase-evaluacion" class="seccion-fase" style="display:none;">
             <h2>Evaluación y Uso</h2>
-            <p>Cómo aplicar estos sistemas correctamente.</p>
+            <p>Sección de ejemplos prácticos y uso del software.</p>
         </section>
 
         <section id="fase-musica" class="seccion-fase" style="display:none;">
-            <h2>¡Tiempo de relax!</h2>
+            <h2>¡Momento de Relax!</h2>
             <audio id="musica-final" controls>
                 <source src="assets/music/fondo.mp3" type="audio/mpeg">
             </audio>
@@ -60,4 +61,5 @@
 
     <script src="script.js"></script>
 </body>
+</html>
 </html>
