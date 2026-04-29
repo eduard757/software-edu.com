@@ -1,86 +1,77 @@
-/* CONFIGURACIÓN DEL FONDO FUTURISTA 3D */
+/* 1. FONDO FUTURISTA 3D */
 body {
     margin: 0;
-    font-family: 'Orbitron', sans-serif; /* Fuente tecnológica */
-    color: white;
-    overflow-x: hidden;
-    background: #000;
-}
-
-.background-3d {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: url('Pro-Drive_PCaaS.jpg') no-repeat center center fixed; /* Tu imagen futurista */
+    padding: 0;
+    /* Usamos tu imagen Pro-Drive_PCaaS.jpg como fondo principal */
+    background: url('Pro-Drive_PCaaS.jpg') no-repeat center center fixed;
     background-size: cover;
-    filter: brightness(0.6);
-    z-index: -1;
-    transform: scale(1.1);
-    animation: zoom3d 20s infinite alternate;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-@keyframes zoom3d {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
-}
-
-/* MENÚ TIPO GLOBO */
-.menu-globos {
+/* 2. DISEÑO DE GLOBOS PARA EL MENÚ */
+/* Esto detecta tu etiqueta <nav> y sus enlaces <a> */
+nav, .barra-navegacion {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    margin-top: 30px;
+    background: none !important; /* Quitamos cualquier barra sólida */
 }
 
-.globo {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px); /* Efecto cristal */
-    padding: 15px 25px;
-    border-radius: 50px; /* Forma de globo/burbuja */
+nav a, .globo {
+    background: rgba(255, 255, 255, 0.1); /* Transparencia tipo cristal */
+    backdrop-filter: blur(10px); /* Desenfoque de fondo */
     border: 1px solid rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: 0.3s;
+    padding: 15px 30px;
+    border-radius: 50px; /* Forma de globo redondo */
+    color: white;
+    text-decoration: none;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.globo:hover {
-    background: #00c6ff;
-    transform: translateY(-5px) scale(1.1);
+nav a:hover, .globo:hover {
+    background: rgba(0, 198, 255, 0.4); /* Color neón al pasar el mouse */
+    transform: scale(1.1) translateY(-5px); /* Efecto de flotación */
+    box-shadow: 0 0 25px #00c6ff;
+    border-color: #00c6ff;
 }
 
-/* ROBOT ANIMADO */
-.robot-animado {
-    width: 150px;
+/* 3. CAJA DE CONTENIDO TIPO CRISTAL (Para el video y secciones) */
+section, .seccion-fase {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(5px);
+    border: 2px solid #00c6ff;
+    border-radius: 25px;
+    padding: 30px;
+    margin: 40px auto;
+    width: 85%;
+    max-width: 1000px;
+    box-shadow: 0 0 30px rgba(0, 198, 255, 0.2);
+}
+
+/* 4. EL ROBOT Y LA BURBUJA */
+.robot-animado, #robot-img {
+    filter: drop-shadow(0 0 15px #00c6ff);
     animation: flotar 3s ease-in-out infinite;
 }
 
 @keyframes flotar {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-20px); }
 }
 
-/* SECCIONES ESTILO CRISTAL */
-.seccion-fase {
-    background: rgba(0, 0, 0, 0.7);
-    margin: 40px auto;
-    padding: 30px;
-    width: 85%;
-    max-width: 900px;
-    border-radius: 30px;
-    border: 2px solid #00c6ff;
-    text-align: center;
-}
-
-.titulo-neon {
-    color: #00c6ff;
-    text-shadow: 0 0 10px #00c6ff;
-}
-
-.video-container iframe {
-    width: 100%;
-    height: 450px;
-    border-radius: 15px;
+.burbuja, #mensaje {
+    background: rgba(0, 198, 255, 0.8) !important;
+    color: white !important;
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px solid white;
 }
