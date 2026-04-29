@@ -1,0 +1,66 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f9fafb 100%);
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+}
+.robot {
+  width: 150px;
+  display: block;
+  margin: 0 auto 1em;
+  animation: bounce 1s infinite alternate;
+}
+@keyframes bounce {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(20px);}
+}
+#bienvenida, #galeria, #explicacion {
+  background: #fff;
+  margin-bottom: 2em;
+  border-radius: 1em;
+  box-shadow: 0 2px 10px #ccd6f6;
+  padding: 2em;
+}
+.imagenes img, .videos video {
+  width: 45%;
+  margin: 1em 2%;
+  border-radius: .5em;
+  box-shadow: 0 1px 5px #8cabf7;
+}
+@media (max-width: 600px) {
+  .imagenes img, .videos video {
+    width: 90%;
+    margin: 1em 5%;
+  }
+}
+input[type="text"] {
+  padding: .6em 1em;
+  font-size: 1.1em;
+  border-radius: .5em;
+  border: 1px solid #b6b6b6;
+  margin-right: .5em;
+}
+button {
+  background: #3b82f6;
+  color: #fff;
+  padding: .6em 2em;
+  border: none;
+  border-radius: .5em;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #2563eb;
+}
+#saludo-personalizado {
+  margin-top: 1em;
+  font-weight: bold;
+  color: #10b981;
+}
