@@ -8,16 +8,23 @@
 </head>
 <body>
 
+    <nav class="navbar">
+        <a href="#fase-video" onclick="mostrarSeccion('fase-video')">¿Qué es?</a>
+        <a href="#fase-tipos" onclick="mostrarSeccion('fase-tipos')">Tipos</a>
+        <a href="#fase-ventajas" onclick="mostrarSeccion('fase-ventajas')">Ventajas</a>
+        <a href="#fase-evaluacion" onclick="mostrarSeccion('fase-evaluacion')">Evaluación</a>
+        <a href="#fase-musica" onclick="mostrarSeccion('fase-musica')">Relajación</a>
+    </nav>
+
     <header id="bienvenida">
         <div class="robot-box">
             <img src="assets/images/robot.png" alt="Robot" class="robot" id="robot-img">
             <div class="burbuja" id="mensaje">
-                ¡Hola! Bienvenido a la página de <strong>Charlles Salcedo</strong>. Mira el video de abajo y dime tu nombre.
+                ¡Hola! Bienvenido. Mira el video educativo y dime tu nombre para comenzar.
             </div>
         </div>
-
         <div class="interaccion">
-            <input type="text" id="nombreUsuario" placeholder="Escribe aquí...">
+            <input type="text" id="nombreUsuario" placeholder="Tu nombre aquí...">
             <button onclick="comenzar()">Ingresar</button>
         </div>
     </header>
@@ -25,42 +32,33 @@
     <main id="contenido-dinamico">
         <section id="fase-video" class="seccion-fase">
             <h2>¿Qué es el Software Educativo?</h2>
-            <div class="video-grande">
-                <iframe src="https://www.youtube.com/embed/S28Z_9pL6tY" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+            <div class="video-contenedor">
+                <iframe src="https://www.youtube.com/embed/S28Z_9pL6tY" frameborder="0" allowfullscreen></iframe>
             </div>
         </section>
 
         <section id="fase-tipos" class="seccion-fase" style="display:none;">
             <h2>Tipos de Software Educativo</h2>
             <div class="galeria">
-                <p>Explora las diferentes herramientas tecnológicas diseñadas para enseñar.</p>
-                <img src="assets/images/tipos1.jpg" alt="Tipos de software" style="width:90%; border-radius:15px;">
+                <p>Existen tutoriales, simuladores, juegos educativos y más.</p>
+                <img src="assets/images/tipos1.jpg" alt="Tipos" style="width:80%; border-radius:10px;">
             </div>
         </section>
 
         <section id="fase-ventajas" class="seccion-fase" style="display:none;">
-            <h2>Ventajas del Software Educativo</h2>
-            <div class="galeria">
-                <p>Aprender es mucho más fácil cuando usamos la tecnología correctamente.</p>
-                <img src="assets/images/ventajas.jpg" alt="Ventajas" style="width:90%; border-radius:15px;">
-            </div>
+            <h2>Ventajas de su uso</h2>
+            <p>Fomentan el autoaprendizaje y la interactividad dinámica.</p>
+            <img src="assets/images/ventajas.jpg" alt="Ventajas" style="width:80%; border-radius:10px;">
         </section>
 
         <section id="fase-evaluacion" class="seccion-fase" style="display:none;">
-            <h2>Evaluación y Uso Real</h2>
-            <p>Aquí verás ejemplos prácticos de cómo se evalúa el aprendizaje con estas herramientas.</p>
+            <h2>Evaluación y Uso Práctico</h2>
+            <p>Análisis de resultados y aplicaciones en el aula de clases.</p>
         </section>
 
         <section id="fase-musica" class="seccion-fase" style="display:none;">
-            <h2>¡Tiempo de Relax!</h2>
-            <p>Has hecho un gran trabajo estudiando hoy. ¡Disfruta de la música!</p>
-            <audio id="musica-final" controls>
-                <source src="assets/music/fondo.mp3" type="audio/mpeg">
-            </audio>
+            <h2>Momento de Relax</h2>
+            <audio controls><source src="assets/music/fondo.mp3" type="audio/mpeg"></audio>
         </section>
     </main>
 
