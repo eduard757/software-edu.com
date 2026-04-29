@@ -1,60 +1,70 @@
-/* 1. FONDO FUTURISTA TOTAL */
+/* DISEÑO FUTURISTA RECUPERADO */
 body {
     margin: 0;
     padding: 0;
     background: url('Pro-Drive_PCaaS.jpg') no-repeat center center fixed;
     background-size: cover;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* 2. TRANSFORMACIÓN A GLOBOS (Ajustado a tu HTML) */
+/* MENÚ TIPO GLOBO */
 .barra-navegacion {
     display: flex;
     justify-content: center;
     gap: 15px;
-    padding: 20px;
-    background: transparent !important; /* Quitamos el fondo azul anterior */
+    padding: 25px;
+    background: transparent !important;
 }
 
-/* Esto selecciona los enlaces de tu línea 12 a 16 */
 .barra-navegacion a {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 12px 25px;
-    border-radius: 50px; /* Esto crea la forma de globo */
+    border-radius: 50px; /* Forma de globo */
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .barra-navegacion a:hover {
     background: rgba(0, 198, 255, 0.5);
-    transform: scale(1.1);
+    transform: scale(1.1) translateY(-5px);
     box-shadow: 0 0 20px #00c6ff;
 }
 
-/* 3. DISEÑO DE LAS SECCIONES (Línea 36 en adelante) */
+/* CAJAS DE CONTENIDO TIPO CRISTAL */
 .seccion-fase {
     background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(5px);
     border: 2px solid #00c6ff;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 25px;
+    padding: 30px;
     margin: 20px auto;
     width: 90%;
-    max-width: 800px;
+    max-width: 900px;
+    box-shadow: 0 0 30px rgba(0, 198, 255, 0.2);
 }
 
-/* 4. EL ROBOT (Línea 22) */
-.robot {
+/* ANIMACIÓN DEL ROBOT */
+.robot, #robot-img {
     animation: flotar 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 10px #00c6ff);
+    filter: drop-shadow(0 0 15px #00c6ff);
 }
 
 @keyframes flotar {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* TITULOS NEÓN */
+h2 {
+    color: #00c6ff;
+    text-shadow: 0 0 10px #00c6ff;
 }
