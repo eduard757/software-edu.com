@@ -1,33 +1,35 @@
-let faseActual = 0;
+let etapa = 0;
 
 function hablar(texto) {
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(texto);
-    u.lang = 'es-ES';
-    window.speechSynthesis.speak(u);
+    const mensaje = new SpeechSynthesisUtterance(texto);
+    mensaje.lang = 'es-ES';
+    mensaje.rate = 1; 
+    window.speechSynthesis.speak(mensaje);
 }
 
-// Función para cambiar de sección manualmente desde el menú
+// Presentación automática al hacer clic
+window.addEventListener('click', () => {
+    if (etapa === 0) {
+        hablar("Hola, yo soy el asistente virtual de Charlles Salcedo y hoy les vamos a hablar sobre el Software Educativo. Por favor, escribe tu nombre para comenzar.");
+        etapa = 1;
+    }
+}, { once: true });
+
 function mostrarSeccion(id) {
-    const secciones = document.querySelectorAll('.seccion-fase');
-    secciones.forEach(s => s.style.display = 'none');
+    document.querySelectorAll('.seccion-fase').forEach(s => s.style.display = 'none');
     document.getElementById(id).style.display = 'block';
 }
 
 function comenzar() {
-    const nombre = document.getElementById('nombreUsuario').value.toLowerCase().trim();
-    const msj = document.getElementById('mensaje');
+    const usuario = document.getElementById('nombreUsuario').value;
+    const burbuja = document.getElementById('mensaje');
 
-    if (faseActual === 0) {
-        if (nombre === "") return hablar("Escribe tu nombre");
-        faseActual = 1;
-        msj.innerHTML = `¡Hola <strong>${nombre}</strong>! Mira el video y cuando termines escribe <strong>"listo el video"</strong>.`;
-        hablar(`Hola ${nombre}. Mira el video y cuando termines escribe listo el video.`);
-    } 
-    else if (nombre.includes("listo el video")) {
-        mostrarSeccion('fase-tipos');
-        msj.innerHTML = "Excelente, ahora estamos en Tipos de Software.";
-        hablar("Excelente, ahora estamos en la sección de tipos de software.");
+    if (usuario === "") {
+        hablar("Por favor, ingresa tu nombre.");
+    } else {
+        burbuja.innerHTML = `¡Hola <strong>${usuario}</strong>! Comencemos la defensa de Charlles.`;
+        hablar(`Excelente ${usuario}. El software educativo es una herramienta diseñada para facilitar la enseñanza. Mira el video para conocer más.`);
+        mostrarSeccion('fase-video');
     }
-    // Puedes seguir agregando las demás frases aquí...
 }
