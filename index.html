@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Software Educativo Charlles Salcedo</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Educativo | Charlles Salcedo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <audio id="background-music" src="assets/music/fondo.mp3" autoplay loop></audio>
 
-  <main>
-    <section id="bienvenida">
-      <img src="assets/images/robot.png" alt="Robot Bienvenida" class="robot"/>
-      <h1>¡Bienvenido a la página web de Charlles Salcedo!</h1>
-      <p>Somos el software educativo que tú necesitas.</p>
-      <input type="text" id="nombre" placeholder="Ingresa tu nombre para continuar" />
-      <button onclick="personalizarBienvenida()">Ingresar</button>
-      <div id="saludo-personalizado"></div>
-    </section>
+    <header id="bienvenida">
+        <div class="robot-box">
+            <img src="assets/images/robot.png" alt="Robot" class="robot" id="robot-img">
+            <div class="burbuja" id="mensaje">
+                ¡Hola! Bienvenido a la página de <strong>Charlles Salcedo</strong>. Somos el software educativo que tú necesitas.
+            </div>
+        </div>
+        
+        <div class="interaccion">
+            <input type="text" id="nombreUsuario" placeholder="Ingresa tu nombre...">
+            <button onclick="comenzar()">Ingresar</button>
+        </div>
+    </header>
 
-    <section id="galeria">
-      <h2>¿Qué es el software educativo?</h2>
-      <p>El software educativo es una herramienta que facilita el aprendizaje de forma interactiva. Aquí tienes un video explicativo:</p>
-      <div class="videos">
-        <video src="assets/videos/software_educativo.mp4" controls poster="assets/images/software_cover.jpg" width="100%"></video>
-      </div>
-      <div class="imagenes">
-        <img src="assets/images/educacion1.jpg" alt="Educación 1"/>
-        <img src="assets/images/educacion2.jpg" alt="Educación 2"/>
-      </div>
-    </section>
+    <main>
+        <section class="contenido">
+            <h2>¿Qué es el Software Educativo?</h2>
+            <p>Es una herramienta interactiva diseñada para facilitar la enseñanza y el aprendizaje.</p>
+            
+            <div class="media">
+                <video controls poster="assets/images/portada-video.jpg">
+                    <source src="assets/video/explicacion.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
+            </div>
+        </section>
+    </main>
 
-    <section id="explicacion">
-      <h2>¿Cómo se hace un software educativo?</h2>
-      <p>El desarrollo del software educativo se basa en entender las necesidades de los estudiantes y docentes, usando herramientas tecnológicas para crear entornos interactivos y atractivos. Se combinan pedagogía, diseño y programación para construir soluciones efectivas.</p>
-    </section>
-  </main>
+    <audio id="musica" loop>
+        <source src="assets/music/fondo.mp3" type="audio/mpeg">
+    </audio>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
