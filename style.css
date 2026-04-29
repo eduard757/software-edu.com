@@ -1,58 +1,62 @@
-/* DISEÑO FUTURISTA RECUPERADO */
+/* DISEÑO FUTURISTA TOTAL */
 body {
     margin: 0;
     padding: 0;
+    /* Usamos la imagen que subiste como fondo principal */
     background: url('Pro-Drive_PCaaS.jpg') no-repeat center center fixed;
     background-size: cover;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
-/* MENÚ TIPO GLOBO */
+/* MENÚ TIPO GLOBO (BURBUJAS) */
 .barra-navegacion {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    padding: 25px;
-    background: transparent !important;
+    gap: 20px;
+    padding: 30px;
+    background: transparent !important; /* Quitamos cualquier barra sólida */
 }
 
+/* Esto convierte tus enlaces en los globos de la imagen */
 .barra-navegacion a {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1); /* Efecto cristal */
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 12px 25px;
-    border-radius: 50px; /* Forma de globo */
+    padding: 15px 30px;
+    border-radius: 50px; /* Esto hace la forma de globo/burbuja */
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .barra-navegacion a:hover {
-    background: rgba(0, 198, 255, 0.5);
-    transform: scale(1.1) translateY(-5px);
+    background: rgba(0, 198, 255, 0.4); /* Azul neón al pasar el mouse */
+    transform: scale(1.1);
     box-shadow: 0 0 20px #00c6ff;
 }
 
-/* CAJAS DE CONTENIDO TIPO CRISTAL */
+/* CAJA DE CONTENIDO TIPO CRISTAL */
 .seccion-fase {
     background: rgba(0, 0, 0, 0.7) !important;
     backdrop-filter: blur(5px);
     border: 2px solid #00c6ff;
     border-radius: 25px;
     padding: 30px;
-    margin: 20px auto;
-    width: 90%;
+    margin-top: 40px;
+    width: 85%;
     max-width: 900px;
+    text-align: center;
     box-shadow: 0 0 30px rgba(0, 198, 255, 0.2);
 }
 
-/* ANIMACIÓN DEL ROBOT */
+/* EL ROBOT FLOTANTE */
 .robot, #robot-img {
     animation: flotar 3s ease-in-out infinite;
     filter: drop-shadow(0 0 15px #00c6ff);
@@ -63,7 +67,6 @@ body {
     50% { transform: translateY(-20px); }
 }
 
-/* TITULOS NEÓN */
 h2 {
     color: #00c6ff;
     text-shadow: 0 0 10px #00c6ff;
