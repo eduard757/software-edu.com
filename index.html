@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Educativo Charlles Salcedo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="background-music" src="assets/music/fondo.mp3" autoplay loop></audio>
+
+  <main>
+    <section id="bienvenida">
+      <img src="assets/images/robot.png" alt="Robot Bienvenida" class="robot"/>
+      <h1>¡Bienvenido a la página web de Charlles Salcedo!</h1>
+      <p>Somos el software educativo que tú necesitas.</p>
+      <input type="text" id="nombre" placeholder="Ingresa tu nombre para continuar" />
+      <button onclick="personalizarBienvenida()">Ingresar</button>
+      <div id="saludo-personalizado"></div>
+    </section>
+
+    <section id="galeria">
+      <h2>¿Qué es el software educativo?</h2>
+      <p>El software educativo es una herramienta que facilita el aprendizaje de forma interactiva. Aquí tienes un video explicativo:</p>
+      <div class="videos">
+        <video src="assets/videos/software_educativo.mp4" controls poster="assets/images/software_cover.jpg" width="100%"></video>
+      </div>
+      <div class="imagenes">
+        <img src="assets/images/educacion1.jpg" alt="Educación 1"/>
+        <img src="assets/images/educacion2.jpg" alt="Educación 2"/>
+      </div>
+    </section>
+
+    <section id="explicacion">
+      <h2>¿Cómo se hace un software educativo?</h2>
+      <p>El desarrollo del software educativo se basa en entender las necesidades de los estudiantes y docentes, usando herramientas tecnológicas para crear entornos interactivos y atractivos. Se combinan pedagogía, diseño y programación para construir soluciones efectivas.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
