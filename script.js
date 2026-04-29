@@ -1,20 +1,20 @@
-let etapa = 0;
+let fase = 0;
 
 function hablar(texto) {
     window.speechSynthesis.cancel();
-    const mensaje = new SpeechSynthesisUtterance(texto);
-    mensaje.lang = 'es-ES';
-    mensaje.rate = 1; 
-    window.speechSynthesis.speak(mensaje);
+    const u = new SpeechSynthesisUtterance(texto);
+    u.lang = 'es-ES';
+    u.rate = 1;
+    window.speechSynthesis.speak(u);
 }
 
-// Presentación automática al hacer clic
-window.addEventListener('click', () => {
-    if (etapa === 0) {
-        hablar("Hola, yo soy el asistente virtual de Charlles Salcedo y hoy les vamos a hablar sobre el Software Educativo. Por favor, escribe tu nombre para comenzar.");
-        etapa = 1;
+// Inicio de la presentación
+window.onclick = () => {
+    if (fase === 0) {
+        hablar("Hola, yo soy el asistente virtual de Charlles Salcedo y hoy les vamos a hablar sobre el Software Educativo. Por favor, ingresa tu nombre.");
+        fase = 1;
     }
-}, { once: true });
+};
 
 function mostrarSeccion(id) {
     document.querySelectorAll('.seccion-fase').forEach(s => s.style.display = 'none');
@@ -22,14 +22,14 @@ function mostrarSeccion(id) {
 }
 
 function comenzar() {
-    const usuario = document.getElementById('nombreUsuario').value;
-    const burbuja = document.getElementById('mensaje');
+    const nombre = document.getElementById('nombreUsuario').value;
+    const msj = document.getElementById('mensaje');
 
-    if (usuario === "") {
-        hablar("Por favor, ingresa tu nombre.");
+    if (nombre === "") {
+        hablar("Escribe tu nombre para continuar.");
     } else {
-        burbuja.innerHTML = `¡Hola <strong>${usuario}</strong>! Comencemos la defensa de Charlles.`;
-        hablar(`Excelente ${usuario}. El software educativo es una herramienta diseñada para facilitar la enseñanza. Mira el video para conocer más.`);
+        msj.innerHTML = `¡Bienvenido ${nombre}! Comencemos con la exposición.`;
+        hablar(`Excelente ${nombre}. Empecemos por definir qué es el software educativo.`);
         mostrarSeccion('fase-video');
     }
 }
