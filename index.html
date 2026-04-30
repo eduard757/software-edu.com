@@ -1,82 +1,96 @@
-body {
-    margin: 0;
-    padding: 0;
-    /* Fondo del aula futurista */
-    background: url('pngtree-futuristic-classroom-youth-learning-interactive-technology-picture-image_16294112.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Segoe UI', sans-serif;
-    color: white;
-    scroll-behavior: smooth;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Defensa: Sistemas Operativos - Software Educativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.barra-navegacion {
-    position: fixed;
-    top: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    z-index: 1000;
-}
+    <nav class="barra-navegacion">
+        <a href="#que-es">¿Qué es?</a>
+        <a href="#tipos">Tipos</a>
+        <a href="#ventajas">Ventajas</a>
+        <a href="#porque-usar">¿Por qué usarlo?</a>
+        <a href="#creacion">Propósito</a>
+    </nav>
 
-.barra-navegacion a {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 10px 25px;
-    border-radius: 50px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
+    <!-- ROBOT ASISTENTE -->
+    <div id="contenedor-robot">
+        <div id="burbuja-texto">¡Haz clic para iniciar la defensa!</div>
+        <img src="robot.png" id="robot-img" alt="Robot" onclick="interaccionDefensa()">
+    </div>
 
-#contenedor-robot {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 2000;
-    cursor: pointer;
-}
+    <main class="contenedor-principal">
+        <!-- SECCIÓN 1: CONCEPTOS DENTRO -->
+        <section id="que-es" class="ventana-cristal">
+            <div class="header-ventana">
+                <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
+            </div>
+            <h2>¿Qué es el Software Educativo?</h2>
+            <hr>
+            <p>Es un programa diseñado con la finalidad de ser utilizado como medio didáctico para facilitar los procesos de enseñanza y aprendizaje.</p>
+            <!-- VIDEO AQUÍ -->
+            <div class="contenedor-video">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
 
-#robot-img {
-    width: 130px;
-    animation: flotar 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 15px #00c6ff);
-}
+        <section id="tipos" class="ventana-cristal">
+            <div class="header-ventana"><span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span></div>
+            <h2>Tipos de Software</h2>
+            <hr>
+            <p>Se clasifican en programas de consulta, tutoriales, ejercitación, simuladores y juegos educativos.</p>
+        </section>
 
-#burbuja-texto {
-    background: rgba(0, 0, 0, 0.85);
-    border: 1px solid #00c6ff;
-    padding: 12px;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    max-width: 250px;
-    color: white;
-}
+        <section id="ventajas" class="ventana-cristal">
+            <div class="header-ventana"><span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span></div>
+            <h2>Ventajas</h2>
+            <hr>
+            <p>Permite la interactividad con los alumnos, retroalimentación inmediata y facilita el aprendizaje individualizado.</p>
+        </section>
 
-@keyframes flotar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
+        <section id="porque-usar" class="ventana-cristal">
+            <div class="header-ventana"><span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span></div>
+            <h2>¿Por qué usarlo?</h2>
+            <hr>
+            <p>Porque dinamiza la sesión de clase, motiva al estudiante y ayuda a visualizar conceptos de sistemas operativos de forma práctica.</p>
+        </section>
 
-.ventana-cristal {
-    background: rgba(15, 20, 30, 0.85);
-    backdrop-filter: blur(15px);
-    border: 2px solid #00c6ff;
-    border-radius: 20px;
-    padding: 30px;
-    margin: 80px auto;
-    width: 85%;
-    max-width: 850px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-}
+        <section id="creacion" class="ventana-cristal">
+            <div class="header-ventana"><span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span></div>
+            <h2>Propósito</h2>
+            <hr>
+            <p>Fue creado para integrar las TIC en el entorno escolar y potenciar las capacidades cognitivas del estudiante.</p>
+        </section>
+    </main>
 
-.header-ventana { display: flex; gap: 8px; margin-bottom: 15px; }
-.punto { width: 12px; height: 12px; border-radius: 50%; }
-.rojo { background: #ff5f56; }
-.amarillo { background: #ffbd2e; }
-.verde { background: #27c93f; }
+    <script>
+        let fase = 0;
+        let usuario = "";
 
-h2 { color: #00c6ff; text-transform: uppercase; margin: 0; }
-hr { border: 0; height: 1px; background: #00c6ff; margin: 15px 0; }
+        function hablar(mensaje) {
+            const utterance = new SpeechSynthesisUtterance(mensaje);
+            utterance.lang = 'es-ES';
+            window.speechSynthesis.speak(utterance);
+            document.getElementById('burbuja-texto').innerText = mensaje;
+        }
+
+        function interaccionDefensa() {
+            if (fase === 0) {
+                hablar("Bienvenido a la defensa de la materia de sistemas operativos. Escribe tu nombre para empezar a exponer.");
+                setTimeout(() => {
+                    usuario = prompt("Escribe tu nombre aquí:");
+                    if (usuario) {
+                        fase = 1;
+                        hablar("¡Excelente " + usuario + "! Hoy vamos a hablar sobre qué es un software educativo. Ve el video y me indicas cuando termines.");
+                    }
+                }, 1500);
+            } else if (fase === 1) {
+                hablar("Muy bien " + usuario + ", ahora que terminaste el video, continuemos con la exposición.");
+                fase = 2;
+            }
+        }
+    </script>
+</body>
+</html>
