@@ -1,88 +1,82 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Defensa de Tesis - Software Educativo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+body {
+    margin: 0;
+    padding: 0;
+    /* Fondo del aula futurista */
+    background: url('pngtree-futuristic-classroom-youth-learning-interactive-technology-picture-image_16294112.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    scroll-behavior: smooth;
+}
 
-    <!-- MENÚ DE NAVEGACIÓN TIPO GLOBO -->
-    <nav class="barra-navegacion">
-        <a href="#que-es">¿Qué es?</a>
-        <a href="#tipos">Tipos</a>
-        <a href="#ventajas">Ventajas</a>
-        <a href="#porque-usar">¿Por qué usarlo?</a>
-        <a href="#creacion">Propósito</a>
-    </nav>
+.barra-navegacion {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 1000;
+}
 
-    <!-- PERSONAJE ASISTENTE (ROBOT) -->
-    <div id="contenedor-robot" onclick="hablarPresentacion()">
-        <div id="burbuja-texto">¡Haz clic para iniciar!</div>
-        <img src="robot.png" id="robot-img" alt="Robot Asistente">
-    </div>
+.barra-navegacion a {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 25px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-    <main class="contenedor-principal">
-        <!-- SECCIÓN 1 -->
-        <section id="que-es" class="ventana-cristal">
-            <div class="header-ventana">
-                <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
-            </div>
-            <h2>¿Qué es el Software Educativo?</h2>
-            <hr>
-            <p>Es cualquier programa computacional diseñado específicamente para facilitar los procesos de enseñanza y aprendizaje, permitiendo una interacción directa entre el alumno y la tecnología.</p>
-        </section>
+#contenedor-robot {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+    cursor: pointer;
+}
 
-        <!-- SECCIÓN 2 -->
-        <section id="tipos" class="ventana-cristal">
-            <div class="header-ventana">
-                <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
-            </div>
-            <h2>Tipos de Software</h2>
-            <hr>
-            <p>Existen diversos tipos según su función pedagógica: simuladores, juegos educativos, tutoriales y programas de ejercitación.</p>
-        </section>
+#robot-img {
+    width: 130px;
+    animation: flotar 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px #00c6ff);
+}
 
-        <!-- SECCIÓN 3 -->
-        <section id="ventajas" class="ventana-cristal">
-            <div class="header-ventana">
-                <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
-            </div>
-            <h2>Ventajas</h2>
-            <hr>
-            <p>Fomenta el autoaprendizaje, permite la retroalimentación inmediata y aumenta la motivación de los estudiantes mediante interfaces interactivas.</p>
-        </section>
+#burbuja-texto {
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid #00c6ff;
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    max-width: 250px;
+    color: white;
+}
 
-        <!-- SECCIÓN 4 -->
-        <section id="porque-usar" class="ventana-cristal">
-            <div class="header-ventana">
-                <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
-            </div>
-            <h2>¿Por qué usar Software Educativo?</h2>
-            <hr>
-            <p>Porque permite adaptar el ritmo de estudio a cada alumno y facilita la comprensión de conceptos abstractos mediante simulaciones visuales.</p>
-        </section>
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
 
-        <!-- SECCIÓN 5 -->
-        <section id="creacion" class="ventana-cristal">
-            <div class="header-ventana">
-                <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
-            </div>
-            <h2>Propósito de Creación</h2>
-            <hr>
-            <p>Fue creado para integrar la tecnología de forma efectiva en el aula, optimizando el tiempo del docente y mejorando la calidad del aprendizaje.</p>
-        </section>
-    </main>
+.ventana-cristal {
+    background: rgba(15, 20, 30, 0.85);
+    backdrop-filter: blur(15px);
+    border: 2px solid #00c6ff;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 80px auto;
+    width: 85%;
+    max-width: 850px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
 
-    <script>
-        function hablarPresentacion() {
-            const texto = "Hola soy el asistente de charlles salcedo, bienvenido a la materia de sistemas operativos hoy hableremos sobre Software Educativo. Haz clic en las secciones de arriba para explorar el contenido.";
-            const mensaje = new SpeechSynthesisUtterance(texto);
-            mensaje.lang = 'es-ES';
-            mensaje.rate = 1;
-            window.speechSynthesis.speak(mensaje);
-        }
-    </script>
-</body>
-</html>
+.header-ventana { display: flex; gap: 8px; margin-bottom: 15px; }
+.punto { width: 12px; height: 12px; border-radius: 50%; }
+.rojo { background: #ff5f56; }
+.amarillo { background: #ffbd2e; }
+.verde { background: #27c93f; }
+
+h2 { color: #00c6ff; text-transform: uppercase; margin: 0; }
+hr { border: 0; height: 1px; background: #00c6ff; margin: 15px 0; }
