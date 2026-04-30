@@ -15,14 +15,8 @@
         <a href="#creacion">Propósito</a>
     </nav>
 
-    <!-- ROBOT ASISTENTE -->
-    <div id="contenedor-robot">
-        <div id="burbuja-texto">¡Haz clic para iniciar la defensa!</div>
-        <img src="robot.png" id="robot-img" alt="Robot" onclick="interaccionDefensa()">
-    </div>
-
     <main class="contenedor-principal">
-        <!-- SECCIÓN 1: CONCEPTOS DENTRO -->
+        <!-- SECCIÓN 1 -->
         <section id="que-es" class="ventana-cristal">
             <div class="header-ventana">
                 <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
@@ -30,9 +24,8 @@
             <h2>¿Qué es el Software Educativo?</h2>
             <hr>
             <p>Es un programa diseñado con la finalidad de ser utilizado como medio didáctico para facilitar los procesos de enseñanza y aprendizaje.</p>
-            <!-- VIDEO AQUÍ -->
             <div class="contenedor-video">
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
             </div>
         </section>
 
@@ -65,10 +58,23 @@
         </section>
     </main>
 
-    <div id="contenedor-robot">
-        <div id="burbuja-texto">¡Haz clic para iniciar la defensa!</div>
-        <img src="robot.png" id="robot-img" alt="Robot" onclick="interaccionDefensa()">
+    <!-- EL ROBOT (He corregido la posición para que no se pierda) -->
+    <div id="contenedor-robot" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; cursor: pointer; text-align: center;">
+        <div id="burbuja-texto" style="background: #00c6ff; color: black; padding: 10px; border-radius: 15px; margin-bottom: 10px; font-weight: bold; font-family: sans-serif;">¡Haz clic para iniciar!</div>
+        <img src="robot.png" id="robot-img" alt="Robot" onclick="interaccionDefensa()" style="width: 150px; filter: drop-shadow(0 0 15px #00c6ff);">
     </div>
+
+    <script>
+        // VARIABLES PARA LA VOZ
+        let fase = 0;
+        let usuario = "";
+
+        function hablar(mensaje) {
+            const utterance = new SpeechSynthesisUtterance(mensaje);
+            utterance.lang = 'es-ES';
+            utterance.rate = 1;
+            window.speechSynthesis.speak(utterance);
+            document.getElementById('burbuja-texto').innerText = mensaje;
         }
 
         function interaccionDefensa() {
