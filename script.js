@@ -1,35 +1,42 @@
-let fase = 0;
+let nombreUsuario = "";
+const asistenteVoz = window.speechSynthesis;
 
 function hablar(texto) {
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(texto);
-    u.lang = 'es-ES';
-    u.rate = 1;
-    window.speechSynthesis.speak(u);
+    const mensaje = new SpeechSynthesisUtterance(texto);
+    mensaje.lang = 'es-ES';
+    mensaje.rate = 1.1; 
+    asistenteVoz.speak(mensaje);
 }
 
-// Inicio de la presentación
-window.onclick = () => {
-    if (fase === 0) {
-        hablar("Hola, yo soy el asistente virtual de Charlles Salcedo y hoy les vamos a hablar sobre el Software Educativo. Por favor, ingresa tu nombre.");
-        fase = 1;
+// 1. Saludo inicial y pregunta el nombre
+function saludoInicial() {
+    hablar("Hola, bienvenidos. Soy la asistente virtual de Charlles Salcedo. Estamos viendo sistemas operativos con la profesora Clara Martínez. ¿Cómo está, profe? Bienvenida a nuestra defensa. Por favor, dime tu nombre para continuar.");
+    
+    // Esperamos un momento y pedimos el nombre por pantalla
+    setTimeout(() => {
+        nombreUsuario = prompt("Introduce tu nombre:");
+        if (nombreUsuario) {
+            continuarPresentacion();
+        }
+    }, 8000);
+}
+
+// 2. Respuesta personalizada y explicación del software
+function continuarPresentacion() {
+    hablar(`Gusto en saludarte, ${nombreUsuario}. Hoy vamos a hablar del software educativo. Pero antes de explicarte qué es, mira este video y cuando termines seguimos. Al final, nos relajaremos con un poco de música.`);
+}
+
+// 3. Música final (Se activa manualmente o al terminar el video)
+function ponerMusica() {
+    hablar("Espero que hayas disfrutado la explicación. Ahora, vamos a relajarnos con un poco de música para cerrar nuestra defensa.");
+    const audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'); // Puedes cambiar este link por tu música favorita
+    audio.play();
+}
+
+// Configurar el clic en el robot
+document.addEventListener('DOMContentLoaded', () => {
+    const robot = document.getElementById('robot-asistente');
+    if (robot) {
+        robot.onclick = saludoInicial;
     }
-};
-
-function mostrarSeccion(id) {
-    document.querySelectorAll('.seccion-fase').forEach(s => s.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-}
-
-function comenzar() {
-    const nombre = document.getElementById('nombreUsuario').value;
-    const msj = document.getElementById('mensaje');
-
-    if (nombre === "") {
-        hablar("Escribe tu nombre para continuar.");
-    } else {
-        msj.innerHTML = `¡Bienvenido ${nombre}! Comencemos con la exposición.`;
-        hablar(`Excelente ${nombre}. Empecemos por definir qué es el software educativo.`);
-        mostrarSeccion('fase-video');
-    }
-}
+});
