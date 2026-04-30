@@ -1,7 +1,7 @@
-/* DISEÑO BASE Y FONDO */
 body {
     margin: 0;
     padding: 0;
+    /* Fondo del aula futurista */
     background: url('pngtree-futuristic-classroom-youth-learning-interactive-technology-picture-image_16294112.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Segoe UI', sans-serif;
@@ -9,7 +9,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* NAVEGACIÓN TIPO GLOBO */
 .barra-navegacion {
     position: fixed;
     top: 20px;
@@ -21,25 +20,22 @@ body {
 }
 
 .barra-navegacion a {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 10px 25px;
     border-radius: 50px;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
 }
 
-/* ROBOT FLOTANTE */
 #contenedor-robot {
     position: fixed;
     bottom: 30px;
     right: 30px;
     z-index: 2000;
     cursor: pointer;
-    max-width: 200px;
 }
 
 #robot-img {
@@ -49,12 +45,13 @@ body {
 }
 
 #burbuja-texto {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     border: 1px solid #00c6ff;
-    padding: 10px;
+    padding: 12px;
     border-radius: 15px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     margin-bottom: 10px;
+    max-width: 250px;
     color: white;
 }
 
@@ -63,23 +60,23 @@ body {
     50% { transform: translateY(-20px); }
 }
 
-/* VENTANAS DE CRISTAL */
 .ventana-cristal {
-    background: rgba(15, 20, 30, 0.8);
+    background: rgba(15, 20, 30, 0.85);
     backdrop-filter: blur(15px);
     border: 2px solid #00c6ff;
     border-radius: 20px;
     padding: 30px;
-    margin: 60px auto;
+    margin: 80px auto;
     width: 85%;
     max-width: 850px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
-.header-ventana { display: flex; gap: 8px; margin-bottom: 10px; }
-.punto { width: 10px; height: 10px; border-radius: 50%; }
+.header-ventana { display: flex; gap: 8px; margin-bottom: 15px; }
+.punto { width: 12px; height: 12px; border-radius: 50%; }
 .rojo { background: #ff5f56; }
 .amarillo { background: #ffbd2e; }
 .verde { background: #27c93f; }
 
-h2 { color: #00c6ff; margin: 0; }
+h2 { color: #00c6ff; text-transform: uppercase; margin: 0; }
+hr { border: 0; height: 1px; background: #00c6ff; margin: 15px 0; }
