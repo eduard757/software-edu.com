@@ -61,37 +61,9 @@
     <!-- EL ROBOT (He corregido la posición para que no se pierda) -->
     <div id="contenedor-robot" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; cursor: pointer; text-align: center;">
         <div id="burbuja-texto" style="background: #00c6ff; color: black; padding: 10px; border-radius: 15px; margin-bottom: 10px; font-weight: bold; font-family: sans-serif;">¡Haz clic para iniciar!</div>
-        <img src="robot.png" id="robot-img" alt="Robot" onclick="interaccionDefensa()" style="width: 150px; filter: drop-shadow(0 0 15px #00c6ff);">
+      <img src="robot.png" id="robot-asistente" alt="Robot" style="width: 150px; filter: drop-shadow(0 0 15px #00c6ff); cursor: pointer;">
     </div>
 
-    <script>
-        // VARIABLES PARA LA VOZ
-        let fase = 0;
-        let usuario = "";
-
-        function hablar(mensaje) {
-            const utterance = new SpeechSynthesisUtterance(mensaje);
-            utterance.lang = 'es-ES';
-            utterance.rate = 1;
-            window.speechSynthesis.speak(utterance);
-            document.getElementById('burbuja-texto').innerText = mensaje;
-        }
-
-        function interaccionDefensa() {
-            if (fase === 0) {
-                hablar("Bienvenido a la defensa de la materia de sistemas operativos. Escribe tu nombre para empezar a exponer.");
-                setTimeout(() => {
-                    usuario = prompt("Escribe tu nombre aquí:");
-                    if (usuario) {
-                        fase = 1;
-                        hablar("¡Excelente " + usuario + "! Hoy vamos a hablar sobre qué es un software educativo. Ve el video y me indicas cuando termines.");
-                    }
-                }, 1500);
-            } else if (fase === 1) {
-                hablar("Muy bien " + usuario + ", ahora que terminaste el video, continuemos con la exposición.");
-                fase = 2;
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
