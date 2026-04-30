@@ -65,15 +65,10 @@
         </section>
     </main>
 
-    <script>
-        let fase = 0;
-        let usuario = "";
-
-        function hablar(mensaje) {
-            const utterance = new SpeechSynthesisUtterance(mensaje);
-            utterance.lang = 'es-ES';
-            window.speechSynthesis.speak(utterance);
-            document.getElementById('burbuja-texto').innerText = mensaje;
+    <div id="contenedor-robot">
+        <div id="burbuja-texto">¡Haz clic para iniciar la defensa!</div>
+        <img src="robot.png" id="robot-img" alt="Robot" onclick="interaccionDefensa()">
+    </div>
         }
 
         function interaccionDefensa() {
