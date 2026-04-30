@@ -21,9 +21,8 @@ body {
 }
 
 .barra-navegacion a {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 10px 25px;
     border-radius: 50px;
@@ -33,12 +32,6 @@ body {
     transition: 0.3s;
 }
 
-.barra-navegacion a:hover {
-    background: #00c6ff;
-    color: black;
-    transform: scale(1.1);
-}
-
 /* ROBOT FLOTANTE */
 #contenedor-robot {
     position: fixed;
@@ -46,6 +39,7 @@ body {
     right: 30px;
     z-index: 2000;
     cursor: pointer;
+    max-width: 200px;
 }
 
 #robot-img {
@@ -55,13 +49,13 @@ body {
 }
 
 #burbuja-texto {
-    background: rgba(0, 198, 255, 0.9);
-    padding: 8px 15px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00c6ff;
+    padding: 10px;
     border-radius: 15px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     margin-bottom: 10px;
     color: white;
-    font-weight: bold;
 }
 
 @keyframes flotar {
@@ -70,33 +64,22 @@ body {
 }
 
 /* VENTANAS DE CRISTAL */
-.contenedor-principal {
-    padding-top: 100px;
-}
-
 .ventana-cristal {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(15, 20, 30, 0.8);
     backdrop-filter: blur(15px);
     border: 2px solid #00c6ff;
     border-radius: 20px;
     padding: 30px;
-    margin: 50px auto;
+    margin: 60px auto;
     width: 85%;
     max-width: 850px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.header-ventana {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.punto { width: 12px; height: 12px; border-radius: 50%; }
+.header-ventana { display: flex; gap: 8px; margin-bottom: 10px; }
+.punto { width: 10px; height: 10px; border-radius: 50%; }
 .rojo { background: #ff5f56; }
 .amarillo { background: #ffbd2e; }
 .verde { background: #27c93f; }
 
-h2 { color: #00c6ff; text-transform: uppercase; }
-hr { border: 0; height: 1px; background: #00c6ff; margin: 15px 0; }
-p { font-size: 1.1rem; line-height: 1.6; }
+h2 { color: #00c6ff; margin: 0; }
