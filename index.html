@@ -1,65 +1,88 @@
-<nav class="barra-navegacion">
-    <a href="#que-es">💡 ¿Qué es?</a>
-    <a href="#tipos">⚙️ Tipos</a>
-    <a href="#ventajas">🚀 Ventajas</a>
-    <a href="#porque-usar">🎯 ¿Por qué usarlo?</a>
-    <a href="#creacion">🛠️ Propósito</a>
-</nav>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defensa de Tesis - Software Educativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<main class="contenedor-principal">
-    
-    <section id="que-es" class="ventana-cristal">
-        <div class="header-ventana">
-            <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
-        </div>
-        <h2>¿Qué es el Software Educativo?</h2>
-        <hr>
-        <p>Es cualquier programa computacional cuyas características estructurales y funcionales sirven de apoyo al proceso de enseñar, aprender y administrar. Se caracteriza por ser interactivo y adaptable al ritmo del estudiante.</p>
-    </section>
+    <!-- MENÚ DE NAVEGACIÓN TIPO GLOBO -->
+    <nav class="barra-navegacion">
+        <a href="#que-es">¿Qué es?</a>
+        <a href="#tipos">Tipos</a>
+        <a href="#ventajas">Ventajas</a>
+        <a href="#porque-usar">¿Por qué usarlo?</a>
+        <a href="#creacion">Propósito</a>
+    </nav>
 
-    <section id="tipos" class="ventana-cristal">
-        <div class="header-ventana">
-            <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
-        </div>
-        <h2>Tipos de Software</h2>
-        <hr>
-        <div class="grid-tipos">
-            <div class="item"><strong>Simuladores:</strong> Para experimentar situaciones reales.</div>
-            <div class="item"><strong>Tutoriales:</strong> Guían paso a paso al alumno.</div>
-            <div class="item"><strong>Juegos:</strong> Aprendizaje basado en retos.</div>
-            <div class="item"><strong>Ejercitación:</strong> Refuerzan conocimientos previos.</div>
-        </div>
-    </section>
+    <!-- PERSONAJE ASISTENTE (ROBOT) -->
+    <div id="contenedor-robot" onclick="hablarPresentacion()">
+        <div id="burbuja-texto">¡Haz clic para iniciar!</div>
+        <img src="robot.png" id="robot-img" alt="Robot Asistente">
+    </div>
 
-    <section id="ventajas" class="ventana-cristal">
-        <div class="header-ventana">
-            <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
-        </div>
-        <h2>Ventajas del Uso Tecnológico</h2>
-        <hr>
-        <ul>
-            <li>Enriquecen el campo de la pedagogía al incorporar recursos multimedia.</li>
-            <li>Fomentan el aprendizaje autónomo y la retroalimentación inmediata.</li>
-            <li>Aumentan la motivación mediante interfaces atractivas.</li>
-        </ul>
-    </section>
+    <main class="contenedor-principal">
+        <!-- SECCIÓN 1 -->
+        <section id="que-es" class="ventana-cristal">
+            <div class="header-ventana">
+                <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
+            </div>
+            <h2>¿Qué es el Software Educativo?</h2>
+            <hr>
+            <p>Es cualquier programa computacional diseñado específicamente para facilitar los procesos de enseñanza y aprendizaje, permitiendo una interacción directa entre el alumno y la tecnología.</p>
+        </section>
 
-    <section id="porque-usar" class="ventana-cristal">
-        <div class="header-ventana">
-            <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
-        </div>
-        <h2>¿Por qué implementarlo en el aula?</h2>
-        <hr>
-        <p>Vivimos en una era digital. Usar software educativo reduce la brecha tecnológica y prepara a los estudiantes para los retos del futuro, permitiendo una educación más inclusiva y personalizada.</p>
-    </section>
+        <!-- SECCIÓN 2 -->
+        <section id="tipos" class="ventana-cristal">
+            <div class="header-ventana">
+                <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
+            </div>
+            <h2>Tipos de Software</h2>
+            <hr>
+            <p>Existen diversos tipos según su función pedagógica: simuladores, juegos educativos, tutoriales y programas de ejercitación.</p>
+        </section>
 
-    <section id="creacion" class="ventana-cristal">
-        <div class="header-ventana">
-            <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
-        </div>
-        <h2>Finalidad de su Creación</h2>
-        <hr>
-        <p>Fue creado con el objetivo de optimizar la gestión del conocimiento. Busca transformar el rol del docente en un facilitador y el del alumno en un protagonista activo de su propia formación.</p>
-    </section>
+        <!-- SECCIÓN 3 -->
+        <section id="ventajas" class="ventana-cristal">
+            <div class="header-ventana">
+                <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
+            </div>
+            <h2>Ventajas</h2>
+            <hr>
+            <p>Fomenta el autoaprendizaje, permite la retroalimentación inmediata y aumenta la motivación de los estudiantes mediante interfaces interactivas.</p>
+        </section>
 
-</main>
+        <!-- SECCIÓN 4 -->
+        <section id="porque-usar" class="ventana-cristal">
+            <div class="header-ventana">
+                <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
+            </div>
+            <h2>¿Por qué usar Software Educativo?</h2>
+            <hr>
+            <p>Porque permite adaptar el ritmo de estudio a cada alumno y facilita la comprensión de conceptos abstractos mediante simulaciones visuales.</p>
+        </section>
+
+        <!-- SECCIÓN 5 -->
+        <section id="creacion" class="ventana-cristal">
+            <div class="header-ventana">
+                <span class="punto rojo"></span><span class="punto amarillo"></span><span class="punto verde"></span>
+            </div>
+            <h2>Propósito de Creación</h2>
+            <hr>
+            <p>Fue creado para integrar la tecnología de forma efectiva en el aula, optimizando el tiempo del docente y mejorando la calidad del aprendizaje.</p>
+        </section>
+    </main>
+
+    <script>
+        function hablarPresentacion() {
+            const texto = "Hola Charlles, bienvenido a la presentación de tu tesis sobre Software Educativo. Haz clic en las secciones de arriba para explorar el contenido.";
+            const mensaje = new SpeechSynthesisUtterance(texto);
+            mensaje.lang = 'es-ES';
+            mensaje.rate = 1;
+            window.speechSynthesis.speak(mensaje);
+        }
+    </script>
+</body>
+</html>
