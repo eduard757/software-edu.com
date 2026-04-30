@@ -80,3 +80,23 @@ body {
 
 h2 { color: #00c6ff; text-transform: uppercase; margin: 0; }
 hr { border: 0; height: 1px; background: #00c6ff; margin: 15px 0; }
+#contenedor-robot {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+    cursor: pointer;
+    text-align: center;
+}
+
+#robot-img {
+    width: 140px;
+    height: auto;
+    filter: drop-shadow(0 0 15px #00c6ff) !important;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
