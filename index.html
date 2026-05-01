@@ -58,12 +58,13 @@
         </section>
     </main>
 
-    <!-- EL ROBOT (He corregido la posición para que no se pierda) -->
-    <div id="contenedor-robot" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; cursor: pointer; text-align: center;">
-        <div id="burbuja-texto" style="background: #00c6ff; color: black; padding: 10px; border-radius: 15px; margin-bottom: 10px; font-weight: bold; font-family: sans-serif;">¡Haz clic para iniciar!</div>
-      <img src="robot.png" id="robot-asistente" alt="Robot" style="width: 150px; filter: drop-shadow(0 0 15px #00c6ff); cursor: pointer;">
-    </div>
+    <!-- Línea 61: El robot ya no tiene un contenedor que lo bloquee -->
+<div id="burbuja-texto" style="display: none; background: #00c6ff; color: white; padding: 10px; border-radius: 10px; margin-bottom: 10px; font-weight: bold;">
+    ¡Hola! Soy tu asistente virtual.
+</div>
 
-    <script src="script.js"></script>
+<img src="robot.png" id="robot-img" onclick="saludoInicial()" style="width: 160px; cursor: pointer; filter: drop-shadow(0 0 15px #00c6ff);">
+
+<script src="script.js"></script>
 </body>
 </html>
