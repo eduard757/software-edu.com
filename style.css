@@ -79,9 +79,31 @@ body {
 #robot-img {
     width: 160px; /* Tamaño del robot */
     height: auto;
-    /* ESTO CREA EL BRILLO AZUL EN EL CONTORNO */
+    position: fixed; /* Esto permite que se mueva por toda la pantalla */
+    z-index: 9999; /* Para que vuele por encima de todo */
+    transition: all 3s ease-in-out; /* Controla la suavidad del recorrido de vuelo */
+    
+    /* MANTENEMOS TU BRILLO AZUL ORIGINAL */
     filter: drop-shadow(0 0 15px #00c6ff) !important;
-    animation: flotar 3s ease-in-out infinite; /* La animación */
+    
+    /* MANTENEMOS TU ANIMACIÓN DE FLOTAR */
+    animation: flotar 3s ease-in-out infinite;
+    
+    left: 20px; /* Posición inicial */
+    top: 20px;
+    cursor: pointer;
+}
+
+/* Nueva clase para el movimiento rápido de alas al estar en el aire */
+.volando {
+    animation: aleteo 0.15s infinite !important;
+}
+
+/* Definición del aleteo */
+   @keyframes aleteo {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.7) translateY(5px); }   
+}
 }
 
 #burbuja-texto {
