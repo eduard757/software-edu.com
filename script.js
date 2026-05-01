@@ -49,3 +49,35 @@ document.querySelectorAll('.burbuja').forEach(burbuja => {
         sonidoHover.play().catch(e => console.log("Esperando interacción"));
     });
 });
+// Lógica para que el asistente de Software Valera vuele solo
+function iniciarVueloAsistente() {
+    const robot = document.getElementById('robot-img');
+    if (!robot) return;
+
+    function mover() {
+        // Activamos el aleteo rápido (clase .volando que creamos en CSS)
+        robot.classList.add('volando');
+
+        // Calculamos coordenadas aleatorias restando el tamaño del robot
+        const x = Math.random() * (window.innerWidth - 180);
+        const y = Math.random() * (window.innerHeight - 180);
+
+        robot.style.left = `${x}px`;
+        robot.style.top = `${y}px`;
+
+        // El vuelo dura 3 segundos (por el transition: all 3s de tu CSS)
+        setTimeout(() => {
+            // Al llegar, quita el aleteo rápido y vuelve a su animación suave
+            robot.classList.remove('volando');
+            
+            // Espera entre 3 y 6 segundos para el próximo vuelo
+            setTimeout(mover, Math.random() * 3000 + 3000); 
+        }, 3000);
+    }
+
+    // Iniciar el ciclo de vuelo
+    mover();
+}
+
+// Arranca el sistema cuando la página cargue completamente
+window.addEventListener('load', iniciarVueloAsistente);
