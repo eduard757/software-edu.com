@@ -68,13 +68,6 @@ body {
 }
 
 /* --- EL ROBOT Y SU ANIMACIÓN --- */
-#contenedor-robot {
-    position: fixed; /* Flota sobre la página */
-    bottom: 40px;
-    right: 40px;
-    z-index: 2000;
-    text-align: center;
-}
 
 #robot-img {
     width: 160px; /* Tamaño del robot */
