@@ -100,43 +100,28 @@ body {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); } /* Sube 20px */
 }
-/* --- GLOBOS HOLOGRÁFICOS FORZADOS --- */
 .contenedor-burbujas {
-    position: fixed !important;
-    top: 20% !important;
-    left: 20px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 15px !important;
-    z-index: 9999 !important;
+    display: flex;
+    flex-direction: row;    /* Alinea los botones en fila */
+    justify-content: center; /* Los centra horizontalmente */
+    gap: 20px;               /* Espacio entre cada burbuja */
+    width: 100%;             /* Asegura que ocupe todo el ancho */
+    padding: 20px 0;         /* Espacio arriba y abajo del menú */
+    position: relative;      /* Evita que tape otros elementos */
+    z-index: 10;
 }
 
 .burbuja {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 2px solid #ffeb3b !important; /* Amarillo Avispa */
-    border-radius: 50px !important;
-    padding: 10px 20px !important;
-    color: white !important;
-    font-family: Arial, sans-serif !important;
-    font-weight: bold !important;
-    text-align: center !important;
-    cursor: pointer !important;
-    backdrop-filter: blur(10px) !important;
-    box-shadow: 0 0 15px rgba(255, 235, 59, 0.6) !important;
-    animation: flotarGlobos 3s ease-in-out infinite !important;
-    display: block !important;
-    width: fit-content !important;
-    text-decoration: none !important;
-}
-
-/* Animación */
-@keyframes flotarGlobos {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-}
-
-/* Cambiar color a las burbujas pares para que se vea pro */
-.burbuja:nth-child(even) {
-    border-color: #00c6ff !important; /* Azul Aula */
-    box-shadow: 0 0 15px rgba(0, 198, 255, 0.6) !important;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Cambié transform por all para que el brillo también sea suave */
+    
+    /* Colores y bordes para que resalten */
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    border: 2px solid #50b8e7;      /* Borde azul cian */
+    border-radius: 50px;           /* Forma de píldora */
+    color: white;                  /* Texto blanco */
+    font-weight: bold;
+    text-shadow: 0 0 5px #50b8e7;  /* Brillo en el texto */
+    box-shadow: 0 0 10px rgba(80, 184, 231, 0.3); /* Brillo suave exterior */
 }
