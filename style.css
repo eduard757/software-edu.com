@@ -122,6 +122,18 @@ body {
     border-radius: 50px;           /* Forma de píldora */
     color: white;                  /* Texto blanco */
     font-weight: bold;
-    text-shadow: 0 0 5px #50b8e7;  /* Brillo en el texto */
-    box-shadow: 0 0 10px rgba(80, 184, 231, 0.3); /* Brillo suave exterior */
+  /* Busca el bloque que dice .burbuja:hover y cámbialo por este */
+
+.burbuja:hover {
+    transform: scale(1.1); /* Efecto de agrandado */
+    
+    /* Brillo intenso en el borde */
+    border-color: #ffffff; /* Borde cian que brilla */
+    box-shadow: 0 0 20px #50b8e7, 0 0 40px #50b8e7; /* Doble brillo neón */
+    
+    /* Fondo un poco más claro para "encenderlo" */
+    background: rgba(80, 184, 231, 0.3);
+    
+    /* Brillo en el texto */
+    text-shadow: 0 0 8px #ffffff;
 }
