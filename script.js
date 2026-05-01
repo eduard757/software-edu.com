@@ -40,3 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
         robot.onclick = saludoInicial;
     }
 });
+// --- EFECTO DE SONIDO PARA LAS BURBUJAS ---
+const sonidoHover = new Audio('activos/hover.mp3'); 
+
+document.querySelectorAll('.burbuja').forEach(burbuja => {
+    burbuja.addEventListener('mouseenter', () => {
+        sonidoHover.currentTime = 0;
+        sonidoHover.play().catch(e => console.log("Esperando interacción del usuario para sonar"));
+    });
+});
