@@ -78,6 +78,16 @@ function iniciarVueloAsistente() {
     // Iniciar el ciclo de vuelo
     mover();
 }
+// --- ESTA PARTE REEMPLAZA LAS LÍNEAS 81 A 83 ---
 
-// Arranca el sistema cuando la página cargue completamente
+// 1. Intentar arrancar de inmediato
+iniciarVueloAsistente();
+
+// 2. Por si acaso, también al cargar la página
 window.addEventListener('load', iniciarVueloAsistente);
+
+// 3. Y como seguridad extra por si el navegador bloquea el auto-inicio
+document.addEventListener('click', () => {
+    // Solo arranca si no ha empezado ya
+    iniciarVueloAsistente();
+}, { once: true }); // Solo se ejecuta la primera vez que hagas clic
